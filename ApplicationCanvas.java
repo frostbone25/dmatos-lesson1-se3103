@@ -5,23 +5,29 @@ import java.awt.Graphics;
 
 import javax.swing.JPanel;
 
-public class AppCanvas extends JPanel
+public class ApplicationCanvas extends JPanel
 {
-    int randomNumber = 0;
+    //The "lucky number" that is displayed.
+    public int randomNumber;
 
-    public AppCanvas()
+    //Constructor
+    public ApplicationCanvas()
     {
-        setPreferredSize(new Dimension(300, 250));
+        Dimension dimensions = new Dimension(300, 250);
+
+        setPreferredSize(dimensions);
     }
 
+    //"Update UI" Method
     @Override
     public void paintComponent(Graphics graphics)
     {
         super.paintComponent(graphics);
-        
-        var font = new Font("Courier New", Font.BOLD, 24);
+
+        Font font = new Font("Courier New", Font.BOLD, 24);
         graphics.setFont(font);
-        graphics.setColor(Color.blue);
+
+        graphics.setColor(Color.red);
         graphics.drawString("Lucky Number Is:", 30, 100);
         graphics.drawString("" + randomNumber, 30, 140);
     }
