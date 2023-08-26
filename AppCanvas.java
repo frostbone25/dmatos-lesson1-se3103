@@ -1,4 +1,6 @@
+import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Graphics;
 
 import javax.swing.JPanel;
@@ -15,6 +17,11 @@ public class AppCanvas extends JPanel
     @Override
     public void paintComponent(Graphics graphics)
     {
+        super.paintComponent(graphics);
+        
+        var font = new Font("Courier New", Font.BOLD, 24);
+        graphics.setFont(font);
+        graphics.setColor(Color.blue);
         graphics.drawString("Lucky Number Is:", 30, 100);
         graphics.drawString("" + randomNumber, 30, 140);
     }
