@@ -12,6 +12,8 @@ public class App {
         //initalize the application window
         window.init();
 
+        window.pack();
+
         //set it to be visible
         window.setVisible(true);
     }
